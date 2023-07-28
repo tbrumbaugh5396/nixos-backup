@@ -16,6 +16,9 @@ In linux, you can run the showkey command.
 The hotkeys for xfce are available by going to the following tabs: [Applications] >> [Settings] >> [Keyboard] >> [Application Shortcuts]
 I have added the shortcut to get to this page: Ctrl + K
 
+I believe that these shortcuts are saved in:
+- /home/username/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+
 There are more here: https://linuxhint.com/100_keyboard_shortcuts_linux/
 
 # Macros
