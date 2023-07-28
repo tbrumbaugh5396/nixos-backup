@@ -39,6 +39,9 @@ Macros for linux:
 I think this is Macros for Windows:
 - https://www.autohotkey.com/
 
+This looks like a Nix Specific key manager:
+- https://nixos.wiki/wiki/Actkbd
+
 # Additional
 I think this tool is for programming your keyboard and mouse with custom macros.
 https://github.com/tolga9009/sidewinderd
