@@ -48,3 +48,6 @@ This looks like a Nix Specific key manager:
 # Additional
 I think this tool is for programming your keyboard and mouse with custom macros.
 https://github.com/tolga9009/sidewinderd
+
+# NixOps
+NixOps is a tool for deploying Nix to remote machines: https://github.com/NixOS/nixops
