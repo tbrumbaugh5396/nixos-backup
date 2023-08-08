@@ -51,3 +51,38 @@ https://github.com/tolga9009/sidewinderd
 
 # NixOps
 NixOps is a tool for deploying Nix to remote machines: https://github.com/NixOS/nixops
+
+# NPM
+How can you install and use npm packages using NixOS? 
+
+## What are npm global packages and how can I use them in Nix?
+npm stores the globally installed package in the node_modules folder. 
+The global packages are all stored in a single place in your system depending on the setup of your operating system, irrespective of where you run npm install -g <package-name>.
+
+## How to use global packages in Nix
+There are multiple ways to use npm packages through nix:
+
+### Process to get around npm packages in Nix
+For my personal projects, I use nix-shell then within the shell I use npm scripts to prevent the need for npm global packages (like with gulp). The process looks something like this (and is probably very similar for yarn):
+
+$ nix-shell -p nodejs-8_x
+[nix-shell:yourproject]$ npm install # installs npm deps to project-local node_modules
+[nix-shell:yourproject]$ npm exec (...) # using scripts configured in package.json
+
+This works well for me since none of my packages have binary dependencies. This post describes the creation of a default.nix for your project so you won't have to specify dependencies for every invocation of nix-shell, but it's optional.
+
+Another way is using npm2nix:
+node2nix -i node-packages.json # creates ./default.nix
+nix-shell # nix-shell will look for a default.nix, which above will have generated
+
+Which will cause Nix to manage all npm packages in the project.
+
+It may be a good idea to become familiar with nix-shell, since trying to install node packages / any dependency in your nix profile (through nix-env or nox) defeats the purpose of nix by polluting the "global" namespace.
+
+
+# Nix Home Manager
+https://discourse.nixos.org/t/adding-folders-and-scripts/5114
+
+https://www.reddit.com/r/NixOS/comments/9bb9h9/post_your_homemanager_homenix_file/
+
+https://nixos.wiki/wiki/Home_Manager
